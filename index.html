@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sujith Raman S — Backend Software Engineer</title>
-<meta name="description" content="Backend Software Engineer with 3+ years building high-throughput microservices, real-time data pipelines, and scalable cloud-native systems with Python and AWS.">
+<title>Sujith Raman S — Senior Software Engineer</title>
+<meta name="description" content="Senior Software Engineer with 4+ years building high-throughput microservices, real-time data pipelines, and scalable cloud-native systems with Python and AWS.">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -21,8 +21,11 @@
   --grad-soft:linear-gradient(110deg,rgba(30,84,245,.12),rgba(108,76,255,.12),rgba(6,182,212,.12));
   --shadow-card:0 1px 2px rgba(7,11,28,.04),0 10px 30px rgba(7,11,28,.05);
   --shadow-glow:0 8px 24px rgba(30,84,245,.18),0 2px 0 rgba(30,84,245,.06);
-  --r:18px;--maxw:1180px;
+  --r:18px;--maxw:1180px;--nav-bg:rgba(255,255,255,.72);--nav-mob-bg:rgba(255,255,255,.97);--readout-bg:rgba(255,255,255,.85);--selection:rgba(30,84,245,.18);
 }
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#080c24;--surface:#0e1329;--hairline:#1e2748;--ink:#e8ecf4;--muted:#8a93b8;--muted-2:#5b6477;--shadow-card:0 1px 2px rgba(0,0,0,.25),0 10px 30px rgba(0,0,0,.35);--shadow-glow:0 8px 24px rgba(30,84,245,.25),0 2px 0 rgba(30,84,245,.1);--nav-bg:rgba(14,19,41,.78);--nav-mob-bg:rgba(14,19,41,.97);--readout-bg:rgba(14,19,41,.9);--selection:rgba(30,84,245,.3)}}
+[data-theme="dark"]{--bg:#080c24;--surface:#0e1329;--hairline:#1e2748;--ink:#e8ecf4;--muted:#8a93b8;--muted-2:#5b6477;--shadow-card:0 1px 2px rgba(0,0,0,.25),0 10px 30px rgba(0,0,0,.35);--shadow-glow:0 8px 24px rgba(30,84,245,.25),0 2px 0 rgba(30,84,245,.1);--nav-bg:rgba(14,19,41,.78);--nav-mob-bg:rgba(14,19,41,.97);--readout-bg:rgba(14,19,41,.9);--selection:rgba(30,84,245,.3)}
+[data-theme="light"]{--bg:#f6f8fc;--surface:#ffffff;--hairline:#e3e8f1;--ink:#050814;--muted:#5b6477;--muted-2:#8a93a6;--shadow-card:0 1px 2px rgba(7,11,28,.04),0 10px 30px rgba(7,11,28,.05);--shadow-glow:0 8px 24px rgba(30,84,245,.18),0 2px 0 rgba(30,84,245,.06);--nav-bg:rgba(255,255,255,.72);--nav-mob-bg:rgba(255,255,255,.97);--readout-bg:rgba(255,255,255,.85);--selection:rgba(30,84,245,.18)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:120px}
 body{font-family:'Inter Tight',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
@@ -32,9 +35,12 @@ body::before{
   background-size:48px 48px;
   mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 40%,transparent 100%);
   -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 40%,transparent 100%);
+  transition:background-image .3s;
 }
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px)}}
+[data-theme="dark"] body::before{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:2}
-::selection{background:rgba(30,84,245,.18)}
+::selection{background:var(--selection)}
 
 /* ============ GRADIENT TEXT ============ */
 .grad{background:linear-gradient(110deg,#1e54f5,#6c4cff,#06b6d4,#1e54f5);background-size:280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:gradflow 7s linear infinite}
@@ -44,7 +50,7 @@ body::before{
 #progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:1000;background:var(--grad);background-size:200% 100%;box-shadow:0 0 12px rgba(30,84,245,.7),0 0 4px rgba(108,76,255,.6);animation:gradflow 5s linear infinite}
 
 /* ============ NAV ============ */
-nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:22px;padding:9px 9px 9px 18px;background:rgba(255,255,255,.72);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border:1px solid var(--hairline);border-radius:999px;box-shadow:0 8px 30px rgba(7,11,28,.08);max-width:calc(100vw - 32px)}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:22px;padding:9px 9px 9px 18px;background:var(--nav-bg);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border:1px solid var(--hairline);border-radius:999px;box-shadow:0 8px 30px rgba(7,11,28,.08);max-width:calc(100vw - 32px)}
 .brand{display:flex;align-items:center;gap:9px;white-space:nowrap;font-weight:700;font-size:15px;letter-spacing:-.02em;text-decoration:none;color:var(--ink)}
 .diamond{width:16px;height:16px;background:var(--grad);transform:rotate(45deg);border-radius:3px;box-shadow:0 0 10px rgba(30,84,245,.5);flex:0 0 auto}
 .nav-links{display:flex;gap:4px;align-items:center}
@@ -57,6 +63,13 @@ nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:900;disp
 .burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.theme-toggle{background:none;border:none;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s;flex:0 0 auto;padding:0}
+.theme-toggle:hover{background:rgba(30,84,245,.07);color:var(--ink)}
+.theme-toggle svg{width:18px;height:18px;stroke:currentColor;fill:none}
+.theme-toggle .sun{display:block}.theme-toggle .moon{display:none}
+[data-theme="dark"] .theme-toggle .sun{display:none}
+[data-theme="dark"] .theme-toggle .moon{display:block}
+[data-theme="light"] .theme-toggle .sun{display:block}[data-theme="light"] .theme-toggle .moon{display:none}
 
 /* ============ ORBS + NET ============ */
 .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0;pointer-events:none}
@@ -80,8 +93,8 @@ section{padding:90px 0;position:relative}
 /* ============ CARD ============ */
 .card{background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r);box-shadow:var(--shadow-card);transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
 .card.hoverable::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(200px circle at var(--mx,50%) var(--my,50%),rgba(30,84,245,.10),transparent 62%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:0}
-.card.hoverable:hover::after{opacity:1}
-.card.hoverable:hover{transform:translateY(-6px);box-shadow:var(--shadow-glow);border-color:rgba(30,84,245,.5)}
+.card.hoverable:hover::after,.card.hoverable.touched::after{opacity:1}
+.card.hoverable:hover,.card.hoverable.touched{transform:translateY(-6px);box-shadow:var(--shadow-glow);border-color:rgba(30,84,245,.5)}
 .card>*{position:relative;z-index:1}
 
 /* ============ HERO ============ */
@@ -123,7 +136,7 @@ section{padding:90px 0;position:relative}
 .hud.tr{top:-8px;right:-8px;border-left:none;border-bottom:none;border-top-right-radius:6px}
 .hud.bl{bottom:-8px;left:-8px;border-right:none;border-top:none;border-bottom-left-radius:6px}
 .hud.br{bottom:-8px;right:-8px;border-left:none;border-top:none;border-bottom-right-radius:6px}
-.readout{position:absolute;z-index:5;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:.04em;color:var(--blue);background:rgba(255,255,255,.85);border:1px solid var(--hairline);padding:3px 7px;border-radius:6px;white-space:nowrap;box-shadow:0 4px 12px rgba(7,11,28,.06)}
+.readout{position:absolute;z-index:5;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:.04em;color:var(--blue);background:var(--readout-bg);border:1px solid var(--hairline);padding:3px 7px;border-radius:6px;white-space:nowrap;box-shadow:0 4px 12px rgba(7,11,28,.06)}
 .readout .g{width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;margin-right:5px;vertical-align:middle;animation:pulse 2s infinite}
 .r-tl{top:6px;left:-30px}.r-tr{top:6px;right:-26px;color:#16a34a}.r-bl{bottom:8px;left:-26px}.r-br{bottom:8px;right:-30px}
 
@@ -250,26 +263,94 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
 
+/* ============ DARK MODE OVERRIDES ============ */
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .status-pill.current{background:rgba(74,222,128,.12);color:#4ade80;border-color:rgba(74,222,128,.25)}:root:not([data-theme="light"]) .cert-ico{background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.22)}:root:not([data-theme="light"]) .cert-ico svg{stroke:#4ade80}:root:not([data-theme="light"]) .verified{color:#4ade80}:root:not([data-theme="light"]) .verified svg{stroke:#4ade80}:root:not([data-theme="light"]) .ci-item{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.07)}}
+[data-theme="dark"] .status-pill.current{background:rgba(74,222,128,.12);color:#4ade80;border-color:rgba(74,222,128,.25)}
+[data-theme="dark"] .cert-ico{background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.22)}
+[data-theme="dark"] .cert-ico svg{stroke:#4ade80}
+[data-theme="dark"] .verified{color:#4ade80}
+[data-theme="dark"] .verified svg{stroke:#4ade80}
+[data-theme="dark"] .ci-item{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.07)}
+[data-theme="dark"] .btn-out{color:var(--muted)}
+[data-theme="dark"] .hero-tag{color:var(--muted-2)}
+[data-theme="dark"] .prose-card p{color:var(--muted-2)}
+[data-theme="dark"] .readout{box-shadow:0 4px 12px rgba(0,0,0,.2);border-color:rgba(255,255,255,.08)}
+[data-theme="dark"] .dring{border-color:rgba(30,84,245,.25)}
+[data-theme="dark"] .loc-pill{color:var(--muted-2)}
+
 /* ============ RESPONSIVE ============ */
+@media(max-width:1100px){
+  .hero-grid{gap:40px}
+  .photo-wrap{width:min(260px,50vw);height:min(260px,50vw)}
+}
 @media(max-width:980px){
-  .hero-grid{grid-template-columns:1fr;gap:42px}
-  .photo-wrap{order:-1}
+  .hero-grid{grid-template-columns:1fr;gap:36px;text-align:center}
+  .photo-wrap{order:-1;width:min(240px,55vw);height:min(240px,55vw)}
+  .hero-btns{justify-content:center}
+  .loc-pill{margin-left:auto;margin-right:auto}
   .about-grid,.edu-grid{grid-template-columns:1fr}
   .comp-grid,.dig-grid{grid-template-columns:1fr 1fr}
   .hl-grid{grid-template-columns:1fr 1fr}
+  .hero-tag{margin-left:auto;margin-right:auto}
+  .hero-meta{justify-content:center}
+  .sec-head{text-align:center}.sec-top{justify-content:center}
+  .label-pill{margin:0 auto}
+  .hero-title{text-align:center}
+  .hero-name{text-align:center}
+}
+@media(max-width:820px){
+  .exp-company{flex-direction:column;align-items:flex-start}
+  .exp-company div:last-child{text-align:left}
+  .hl-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .photo-wrap{width:min(220px,55vw);height:min(220px,55vw)}
 }
 @media(max-width:680px){
   .wrap{padding:0 18px}
   .nav-links,.nav-cta{display:none}
-  .nav-links.mob{display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border:1px solid var(--hairline);border-radius:18px;padding:10px;gap:2px;box-shadow:0 14px 40px rgba(7,11,28,.12)}
-  .nav-links.mob a{padding:12px 14px;font-size:14px}
+  .nav-links.mob{display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:var(--nav-mob-bg);backdrop-filter:blur(16px);border:1px solid var(--hairline);border-radius:18px;padding:10px;gap:2px;box-shadow:0 14px 40px rgba(7,11,28,.12)}
+  .nav-links.mob a,.nav-links.mob .theme-toggle{padding:12px 14px;font-size:14px}
+  .nav-links.mob .theme-toggle{display:flex;width:100%;border-radius:999px;gap:10px;font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--muted);justify-content:flex-start;height:auto}
   .burger{display:flex}
   nav{padding:9px 9px 9px 16px;gap:10px;width:calc(100vw - 32px);justify-content:space-between}
   .comp-grid,.dig-grid,.hl-grid,.cert-grid,.award-grid,.contact-grid,.stat-grid{grid-template-columns:1fr}
   .timeline{padding-left:30px}.tl-dot{left:-29px}.timeline::before{left:5px}
-  .contact-block{padding:44px 26px}
-  section{padding:64px 0}#hero{padding-top:130px}
+  .contact-block{padding:44px 26px;border-radius:20px}
+  section{padding:56px 0}#hero{padding-top:120px;padding-bottom:50px}
   .r-tl,.r-bl{left:-8px}.r-tr,.r-br{right:-8px}
+  .hero-meta{font-size:12px}
+  .stat .num{font-size:30px}
+  .exp-company .c-name{font-size:18px}
+  .sec-title{font-size:clamp(24px,7vw,32px)}
+  .prose-card p{font-size:15px}
+}
+@media(max-width:480px){
+  .wrap{padding:0 14px}
+  nav{padding:7px 7px 7px 14px;width:calc(100vw - 24px);gap:8px}
+  .brand{font-size:13px}
+  .diamond{width:14px;height:14px}
+  #hero{padding-top:100px;padding-bottom:40px}
+  .hero-name{font-size:clamp(32px,14vw,46px)}
+  .hero-title{font-size:clamp(17px,4.5vw,19px)}
+  .hero-tag{font-size:15px}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center;padding:12px 20px}
+  .photo-wrap{width:min(180px,60vw);height:min(180px,60vw)}
+  .readout{font-size:8px;padding:2px 5px}
+  .r-tl{top:2px;left:-6px}.r-tr{top:2px;right:-6px}.r-bl{bottom:4px;left:-6px}.r-br{bottom:4px;right:-6px}
+  .hud{width:20px;height:20px}
+  .hud.tl{top:-6px;left:-6px}.hud.tr{top:-6px;right:-6px}.hud.bl{bottom:-6px;left:-6px}.hud.br{bottom:-6px;right:-6px}
+  section{padding:44px 0}
+  .sec-head{margin-bottom:32px}
+  .contact-block{padding:32px 18px;border-radius:16px}
+  .contact-block .lead{font-size:15px}
+  .ci-item{padding:16px;font-size:14px}
+  .ci-item .cv{font-size:14px}
+  .callout{flex-direction:column;text-align:center;padding:22px 20px}
+  .callout p{font-size:14px}
+  .lang{font-size:13px;padding:10px 16px}
+  footer{padding:30px 0 50px}
+  #top{width:40px;height:40px;bottom:16px;right:16px;border-radius:12px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001s!important;animation-iteration-count:1!important}
@@ -285,6 +366,10 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
   <a href="#hero" class="brand"><span class="diamond"></span>Sujith Raman S</a>
   <div class="nav-links" id="navlinks">
     <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#education">Education</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M1 12h2M21 12h2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+    </button>
   </div>
   <a href="#contact" class="nav-cta">Contact</a>
   <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -300,7 +385,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
         <span class="status-badge"><span class="dot"></span>Open to opportunities</span>
         <div class="hero-meta"><span class="pmt">$</span><span id="tw"></span><span class="caret">&nbsp;</span></div>
         <h1 class="hero-name">Sujith <span class="grad">Raman</span> S</h1>
-        <p class="hero-title">Backend Software Engineer</p>
+        <p class="hero-title">Senior Software Engineer</p>
         <p class="hero-tag">Designing high-throughput microservices, real-time data pipelines, and scalable cloud-native systems with Python and AWS.</p>
         <span class="loc-pill"><svg viewBox="0 0 24 24" fill="none" stroke="#1e54f5" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Bengaluru, India</span>
         <div class="hero-btns">
@@ -332,11 +417,11 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
     <div class="sec-head reveal"><div class="sec-top"><div><span class="label-pill">01 · About</span><h2 class="sec-title">Who <span class="grad">I am</span></h2></div><span class="sec-sub"><b>$</b> cat profile.md</span></div><div class="divider"></div></div>
     <div class="about-grid">
       <div class="card prose-card reveal">
-        <p>Backend Software Engineer with <span class="kw">3+ years</span> of experience designing and building high-throughput microservices, real-time data pipelines, and scalable backend systems using <span class="kw">Python (FastAPI, Flask, Django)</span>. I specialize in low-latency APIs, event-driven architectures, and <span class="kw">fraud-detection platforms</span> processing large-scale traffic.</p>
+        <p>Senior Software Engineer with <span class="kw">4+ years</span> of experience designing and building high-throughput microservices, real-time data pipelines, and scalable backend systems using <span class="kw">Python (FastAPI, Flask, Django)</span>. I specialize in low-latency APIs, event-driven architectures, and <span class="kw">fraud-detection platforms</span> processing large-scale traffic.</p>
         <p style="margin-top:16px">My core strength is in <span class="kw">AWS serverless and cloud-native systems</span> — Lambda, ECS, API Gateway, S3, Kinesis, and Redshift — building configuration-driven, production-grade distributed systems with a focus on scalability, reliability, and cost efficiency.</p>
       </div>
       <div class="stat-grid">
-        <div class="card hoverable stat reveal" style="transition-delay:.05s"><span class="num grad" data-count="3" data-suffix="+">0</span><span class="lab">YEARS EXPERIENCE</span></div>
+        <div class="card hoverable stat reveal" style="transition-delay:.05s"><span class="num grad" data-count="4" data-suffix="+">0</span><span class="lab">YEARS EXPERIENCE</span></div>
         <div class="card hoverable stat reveal" style="transition-delay:.1s"><span class="num grad" data-count="5">0</span><span class="lab">MAJOR PROJECTS</span></div>
         <div class="card hoverable stat reveal" style="transition-delay:.15s"><span class="num grad" data-count="2">0</span><span class="lab">EXCELLENCE AWARDS</span></div>
         <div class="card hoverable stat reveal" style="transition-delay:.2s"><span class="num grad">GCP</span><span class="lab">CERTIFIED ENGINEER</span></div>
@@ -350,12 +435,14 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
   <div class="wrap">
     <div class="sec-head reveal"><div class="sec-top"><div><span class="label-pill">02 · Competencies</span><h2 class="sec-title">Core <span class="grad">competencies</span></h2></div><span class="sec-sub"><b>$</b> ls ./competencies</span></div><div class="divider"></div></div>
     <div class="comp-grid">
-      <div class="card hoverable comp reveal"><span class="cnum">01</span><h3>Backend Engineering</h3><p>FastAPI · Flask · Django · Django REST Framework</p></div>
-      <div class="card hoverable comp reveal" style="transition-delay:.05s"><span class="cnum">02</span><h3>API Design &amp; Security</h3><p>REST design · Versioning · Rate limiting · Webhooks · JWT · RBAC</p></div>
-      <div class="card hoverable comp reveal" style="transition-delay:.1s"><span class="cnum">03</span><h3>Cloud &amp; Serverless</h3><p>AWS Lambda · ECS · API Gateway · EC2 · S3 · Redshift</p></div>
-      <div class="card hoverable comp reveal" style="transition-delay:.05s"><span class="cnum">04</span><h3>Streaming &amp; Event-Driven</h3><p>Amazon Kinesis · Redis Queues · Celery</p></div>
-      <div class="card hoverable comp reveal" style="transition-delay:.1s"><span class="cnum">05</span><h3>Databases</h3><p>PostgreSQL · MySQL · Redis · MongoDB · Neo4j</p></div>
-      <div class="card hoverable comp reveal" style="transition-delay:.15s"><span class="cnum">06</span><h3>Distributed Architecture</h3><p>Microservices · Serverless · Fault-tolerant &amp; async systems</p></div>
+      <div class="card hoverable comp reveal"><span class="cnum">01</span><h3>Backend Engineering</h3><p>FastAPI · Flask · Django · Node.js · NestJS</p></div>
+      <div class="card hoverable comp reveal" style="transition-delay:.05s"><span class="cnum">02</span><h3>API Design &amp; Security</h3><p>REST · GraphQL · gRPC · OAuth2 · JWT · RBAC · Webhooks</p></div>
+      <div class="card hoverable comp reveal" style="transition-delay:.1s"><span class="cnum">03</span><h3>Cloud &amp; Serverless</h3><p>AWS Lambda · ECS · API Gateway · DynamoDB · CDK · S3</p></div>
+      <div class="card hoverable comp reveal" style="transition-delay:.05s"><span class="cnum">04</span><h3>AI / LLM Engineering</h3><p>LangChain · RAG Pipelines · OpenAI · Vector DBs · Embeddings</p></div>
+      <div class="card hoverable comp reveal" style="transition-delay:.1s"><span class="cnum">05</span><h3>Streaming &amp; Event-Driven</h3><p>Apache Kafka · Kinesis · RabbitMQ · Redis Streams · Celery</p></div>
+      <div class="card hoverable comp reveal" style="transition-delay:.15s"><span class="cnum">06</span><h3>Databases</h3><p>PostgreSQL · MySQL · Redis · MongoDB · Neo4j · Pinecone</p></div>
+      <div class="card hoverable comp reveal" style="transition-delay:.05s"><span class="cnum">07</span><h3>DevOps &amp; SDLC</h3><p>Docker · Kubernetes · CI/CD · Agile · Scrum · Git</p></div>
+      <div class="card hoverable comp reveal" style="transition-delay:.1s"><span class="cnum">08</span><h3>Distributed Architecture</h3><p>Microservices · Clean Arch · DDD · Event-Driven · CQRS</p></div>
     </div>
   </div>
 </section>
@@ -365,14 +452,14 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
   <div class="wrap">
     <div class="sec-head reveal"><div class="sec-top"><div><span class="label-pill">03 · Tooling</span><h2 class="sec-title">Digital &amp; <span class="grad">automation</span></h2></div><span class="sec-sub"><b>$</b> cat toolchain.cfg</span></div><div class="divider"></div></div>
     <div class="dig-grid">
-      <div class="card hoverable dig reveal"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1.5" fill="#1e54f5"/></svg></div><h4>Web Scraping</h4><p>Selenium · BeautifulSoup</p></div>
-      <div class="card hoverable dig reveal" style="transition-delay:.05s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 12a8 8 0 018-8 8 8 0 016 2.7M20 12a8 8 0 01-8 8 8 8 0 01-6-2.7"/><path d="M18 4v4h-4M6 20v-4h4"/></svg></div><h4>CI/CD Pipelines</h4><p>GitHub Actions</p></div>
-      <div class="card hoverable dig reveal" style="transition-delay:.1s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V5a2 2 0 012-2h6a2 2 0 012 2v3"/></svg></div><h4>Containerization</h4><p>Docker · Gunicorn · Nginx</p></div>
-      <div class="card hoverable dig reveal" style="transition-delay:.05s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></div><h4>Background Processing</h4><p>Celery · Redis workers</p></div>
-      <div class="card hoverable dig reveal" style="transition-delay:.1s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></div><h4>Testing</h4><p>Pytest · Integration · Unit</p></div>
-      <div class="card hoverable dig reveal" style="transition-delay:.15s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 4L3 11l6 2 2 6 4-7 6-8z"/></svg></div><h4>Telegram Automation</h4><p>Telethon · Custom bots</p></div>
+      <div class="card hoverable dig reveal"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h4>AI / RAG Pipelines</h4><p>LangChain · OpenAI · Vector Search · Document QA</p></div>
+      <div class="card hoverable dig reveal" style="transition-delay:.05s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 12a8 8 0 018-8 8 8 0 016 2.7M20 12a8 8 0 01-8 8 8 8 0 01-6-2.7"/><path d="M18 4v4h-4M6 20v-4h4"/></svg></div><h4>CI/CD &amp; IaC</h4><p>GitHub Actions · Docker · Terraform · AWS CDK</p></div>
+      <div class="card hoverable dig reveal" style="transition-delay:.1s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M21 12a9 9 0 01-9 9 9 9 0 01-9-9 9 9 0 019-9c1.6 0 3.2.4 4.6 1.2"/></svg></div><h4>Web Intelligence</h4><p>Selenium · Playwright · Scrapy · BeautifulSoup</p></div>
+      <div class="card hoverable dig reveal" style="transition-delay:.05s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V5a2 2 0 012-2h6a2 2 0 012 2v3"/></svg></div><h4>Container Orchestration</h4><p>Docker · ECS Fargate · Kubernetes · Nginx</p></div>
+      <div class="card hoverable dig reveal" style="transition-delay:.1s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></div><h4>Quality &amp; Testing</h4><p>Pytest · TDD · Integration · E2E · Performance</p></div>
+      <div class="card hoverable dig reveal" style="transition-delay:.15s"><div class="dig-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></div><h4>Observability</h4><p>CloudWatch · Loki · Prometheus · Grafana</p></div>
     </div>
-    <div class="callout reveal"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><p><b>Configuration-driven by design</b> — building systems that update rules and behavior dynamically, without redeployment.</p></div>
+    <div class="callout reveal"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><p><b>AI-augmented by design</b> — integrating LLMs, RAG pipelines, and intelligent automation into production systems.</p></div>
   </div>
 </section>
 
@@ -381,8 +468,16 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
   <div class="wrap">
     <div class="sec-head reveal"><div class="sec-top"><div><span class="label-pill">04 · Experience</span><h2 class="sec-title">Professional <span class="grad">experience</span></h2></div><span class="sec-sub"><b>$</b> git log --career</span></div><div class="divider"></div></div>
     <div class="card exp-company reveal">
+      <div><div class="c-name">RIBU <span style="color:var(--muted-2);font-weight:600"></span></div><div class="c-role">Senior Software Engineer</div></div>
+      <div style="text-align:right"><span class="status-pill current"><span class="d"></span>Current Role</span><div class="c-period" style="margin-top:8px">2026 — Present</div></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><span class="tl-dot"></span><div class="card hoverable tl-card"><h3>Asset Management SaaS — Workflow ERP <span class="tag">FASTAPI · AWS · VITE</span></h3><ul><li>Built a high-throughput SaaS backend for asset lifecycle management with image, video, 2D &amp; 3D modeling workflows using FastAPI.</li><li>Designed and deployed cloud-native infrastructure on AWS ECS Fargate, RDS, and ElastiCache for media-heavy workloads.</li><li>Architected a microservices-based content pipeline with async Celery workers and Redis for rendering and asset processing.</li><li>Led migration of legacy monolithic services to containerized microservices on AWS with zero-downtime deployment.</li></ul></div></div>
+      <div class="tl-item reveal"><span class="tl-dot"></span><div class="card hoverable tl-card"><h3>RAG Document Chatbot <span class="tag">LANGCHAIN · PINECONE · OPENAI</span></h3><ul><li>Built a RAG-based chatbot for automated document Q&A using LangChain and OpenAI embeddings.</li><li>Implemented vector search with Pinecone for semantic retrieval across project documents.</li><li>Designed a serverless ingestion pipeline with chunking, embedding gen, and Lambda automation.</li></ul></div></div>
+    </div>
+    <div class="card exp-company reveal" style="margin-top:28px">
       <div><div class="c-name">Six Dee Netad Solutions Pvt. Ltd. <span style="color:var(--muted-2);font-weight:600">(mFilterIt)</span></div><div class="c-role">Software Engineer</div></div>
-      <div style="text-align:right"><span class="status-pill current"><span class="d"></span>Current Role</span><div class="c-period" style="margin-top:8px">2022 — Present</div></div>
+      <div style="text-align:right"><div class="c-period">2022 — 2026</div></div>
     </div>
     <div class="timeline">
       <div class="tl-item reveal"><span class="tl-dot"></span><div class="card hoverable tl-card"><h3>Merchant Onboarding <span class="tag">FLASK · AWS</span></h3><ul><li>Built and deployed Flask microservices feeding the risk-analysis dashboard.</li><li>Designed scalable, modular architecture for secure onboarding workflows.</li><li>Automated merchant website scraping with Selenium and BeautifulSoup.</li><li>Deployed on AWS using Lambda and ECS for cost-effective scaling.</li></ul></div></div>
@@ -401,11 +496,11 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
     <div class="hl-grid">
       <div class="card hoverable hl reveal"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span class="hnum">01</span></div><h4>Fraud Scoring Engine</h4><p>Rule-based bot-traffic detection at scale</p></div>
       <div class="card hoverable hl reveal" style="transition-delay:.05s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1l2-1.5-2-3.5-2.4 1a7 7 0 00-1.7-1L16.5 3h-4l-.3 2.5a7 7 0 00-1.7 1l-2.4-1-2 3.5L5.1 11a7 7 0 000 2l-2 1.5 2 3.5 2.4-1a7 7 0 001.7 1l.3 2.5h4l.3-2.5a7 7 0 001.7-1l2.4 1 2-3.5-2-1.5a7 7 0 00.1-1z"/></svg></span><span class="hnum">02</span></div><h4>Zero-Redeploy Config</h4><p>Dynamic Redis-driven rule framework</p></div>
-      <div class="card hoverable hl reveal" style="transition-delay:.1s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></span><span class="hnum">03</span></div><h4>Real-time Pipeline</h4><p>Kinesis → compressed JSON in S3</p></div>
-      <div class="card hoverable hl reveal" style="transition-delay:.15s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><span class="hnum">04</span></div><h4>Redshift ETL</h4><p>Robust analytics workflow for dashboards</p></div>
-      <div class="card hoverable hl reveal"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8M18 8l-5 8"/></svg></span><span class="hnum">05</span></div><h4>Graph Analytics</h4><p>Neo4j Cypher relationships via REST</p></div>
-      <div class="card hoverable hl reveal" style="transition-delay:.05s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 10a4 4 0 00-1-7.9A6 6 0 005 9a4 4 0 00-1 7.9"/><path d="M12 12v9M9 18l3 3 3-3"/></svg></span><span class="hnum">06</span></div><h4>Serverless APIs</h4><p>FastAPI on Lambda + API Gateway</p></div>
-      <div class="card hoverable hl reveal" style="transition-delay:.1s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 4L3 11l6 2 2 6 4-7 6-8z"/></svg></span><span class="hnum">07</span></div><h4>Telegram Intelligence</h4><p>Automated Telethon microservices</p></div>
+      <div class="card hoverable hl reveal" style="transition-delay:.1s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span class="hnum">03</span></div><h4>RAG Document Chatbot</h4><p>LangChain + Pinecone document QA pipeline</p></div>
+      <div class="card hoverable hl reveal" style="transition-delay:.15s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg></span><span class="hnum">04</span></div><h4>Real-time Pipeline</h4><p>Kinesis → compressed JSON in S3</p></div>
+      <div class="card hoverable hl reveal"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><span class="hnum">05</span></div><h4>Redshift ETL</h4><p>Robust analytics workflow for dashboards</p></div>
+      <div class="card hoverable hl reveal" style="transition-delay:.05s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8M18 8l-5 8"/></svg></span><span class="hnum">06</span></div><h4>Graph Analytics</h4><p>Neo4j Cypher relationships via REST</p></div>
+      <div class="card hoverable hl reveal" style="transition-delay:.1s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 10a4 4 0 00-1-7.9A6 6 0 005 9a4 4 0 00-1 7.9"/><path d="M12 12v9M9 18l3 3 3-3"/></svg></span><span class="hnum">07</span></div><h4>Serverless APIs</h4><p>FastAPI on Lambda + API Gateway</p></div>
       <div class="card hoverable hl reveal" style="transition-delay:.15s"><span class="hl-bar"></span><div class="hl-top"><span class="hl-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="hnum">08</span></div><h4>DevTrack Platform</h4><p>Django + Celery productivity suite</p></div>
     </div>
   </div>
@@ -427,7 +522,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
   <div class="wrap">
     <div class="sec-head reveal"><div class="sec-top"><div><span class="label-pill">07 · Certifications</span><h2 class="sec-title">Verified <span class="grad">credentials</span></h2></div><span class="sec-sub"><b>$</b> verify --creds</span></div><div class="divider"></div></div>
     <div class="cert-grid">
-      <div class="card hoverable cert reveal"><span class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l2.4 2.4 3.4-.5.5 3.4L20.7 9l-2 2.8 2 2.8-2.4 1.3-.5 3.4-3.4-.5L12 21.4 9.6 19l-3.4.5-.5-3.4L3.3 14.6l2-2.8-2-2.8 2.4-1.3.5-3.4 3.4.5z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Google Cloud Certified</h4><div class="meta">Associate Cloud Engineer</div><span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Verified credential</span></div></div>
+      <a href="https://www.credly.com/badges/5f424b10-2874-45e7-8784-e375db635845/public_url" target="_blank" rel="noopener" class="card hoverable cert reveal" style="text-decoration:none;color:inherit"><span class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l2.4 2.4 3.4-.5.5 3.4L20.7 9l-2 2.8 2 2.8-2.4 1.3-.5 3.4-3.4-.5L12 21.4 9.6 19l-3.4.5-.5-3.4L3.3 14.6l2-2.8-2-2.8 2.4-1.3.5-3.4 3.4.5z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Google Cloud Certified</h4><div class="meta">Associate Cloud Engineer</div><span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Verify on Credly</span></div></a>
     </div>
   </div>
 </section>
@@ -477,7 +572,7 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
   <div class="wrap">
     <div class="fbrand"><span class="diamond"></span>Sujith Raman S</div>
     <div class="sysline"><span class="g"></span>SYSTEM ONLINE · ALL SERVICES OPERATIONAL</div>
-    <p>© 2026 Sujith Raman S · Backend Software Engineer · Built with precision</p>
+    <p>© 2026 Sujith Raman S · Senior Software Engineer · Built with precision</p>
   </div>
 </footer>
 
@@ -485,6 +580,19 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted
 
 <script>
 const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* dark mode toggle */
+(function(){
+  const html=document.documentElement,btn=document.getElementById('themeToggle');
+  const saved=localStorage.getItem('theme');
+  html.setAttribute('data-theme',saved||'light');
+  btn.addEventListener('click',()=>{
+    const cur=html.getAttribute('data-theme');
+    const next=cur==='dark'?'light':'dark';
+    html.setAttribute('data-theme',next);
+    localStorage.setItem('theme',next);
+  });
+})();
 
 /* progress + back to top */
 const prog=document.getElementById('progress'),topBtn=document.getElementById('top');
@@ -506,19 +614,20 @@ const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.t
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('[data-count]').forEach(el=>io.observe(el));
 
-/* spotlight cards */
+/* spotlight cards + touch support */
 let raf=null;
 document.querySelectorAll('.card.hoverable').forEach(card=>{
   card.addEventListener('pointermove',e=>{
     if(raf)return;
     raf=requestAnimationFrame(()=>{const r=card.getBoundingClientRect();card.style.setProperty('--mx',(e.clientX-r.left)+'px');card.style.setProperty('--my',(e.clientY-r.top)+'px');raf=null;});
   });
+  card.addEventListener('touchstart',()=>{card.style.setProperty('--mx','50%');card.style.setProperty('--my','50%');card.classList.add('touched');setTimeout(()=>card.classList.remove('touched'),600);},{passive:true});
 });
 
 /* mobile menu */
 const burger=document.getElementById('burger'),links=document.getElementById('navlinks');
 burger.addEventListener('click',()=>{burger.classList.toggle('open');links.classList.toggle('mob');});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');links.classList.remove('mob');}));
+links.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{burger.classList.remove('open');links.classList.remove('mob');}));
 
 /* typing terminal */
 (function(){
@@ -543,16 +652,18 @@ links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.cl
   const c=document.getElementById('net');if(!c)return;
   const x=c.getContext('2d');let W,H,dpr=Math.min(devicePixelRatio||1,2),pts=[];
   function size(){W=c.offsetWidth;H=c.offsetHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);const n=Math.min(56,Math.floor(W/26));pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}));}
+  function isDarkTheme(){return document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&window.matchMedia('(prefers-color-scheme:dark)').matches);}
   function draw(){
+    const dark=isDarkTheme();
     x.clearRect(0,0,W,H);
     for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
     for(let i=0;i<pts.length;i++){
       for(let j=i+1;j<pts.length;j++){
         const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
-        if(d<130){x.strokeStyle='rgba(30,84,245,'+(.16*(1-d/130))+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}
+        if(d<130){x.strokeStyle='rgba(30,84,245,'+((dark?.22:.16)*(1-d/130))+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}
       }
     }
-    for(const p of pts){x.fillStyle='rgba(30,84,245,.45)';x.beginPath();x.arc(p.x,p.y,1.7,0,7);x.fill();}
+    for(const p of pts){x.fillStyle=dark?'rgba(100,140,255,.55)':'rgba(30,84,245,.45)';x.beginPath();x.arc(p.x,p.y,1.7,0,7);x.fill();}
     requestAnimationFrame(draw);
   }
   size();draw();
